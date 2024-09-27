@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./pages/css/home.css">
+  <link rel="stylesheet" href="./pages/css/about.css">
+  <link rel="stylesheet" href="./pages/css/contact.css">
+  <link rel="stylesheet" href="./pages/css/product.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body ng-app="myApp" ng-controller="NavController">
+  <!-- Static Navigation Bar -->
+  <nav class="navbar">
+    <span class="nav-button" ng-click="toggleSidebar()">Cafehub</span>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" ng-click="toggleSidebar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="navbar-content">
+      <a href="#!/" ng-class="{active: isActive('/')}" ng-click="setActive('/')">Home</a>
+      <a href="#!/product" ng-class="{active: isActive('/product')}" ng-click="setActive('/product')">Product</a>
+      <a href="#!/about" ng-class="{active: isActive('/about')}" ng-click="setActive('/about')">About</a>
+      <a href="#!/contact" ng-class="{active: isActive('/contact')}" ng-click="setActive('/contact')">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <section id="sidebar" class="sidebar" ng-class="{open: isSidebarOpen}">
+    <a href="javascript:void(0)" class="closebtn" ng-click="toggleSidebar()">×</a>
+    <div class="sidebar-links">
+      <a href="#!/" ng-class="{active: isActive('/')}" ng-click="setActive('/')">Home</a>
+      <a href="#!/product" ng-class="{active: isActive('/product')}" ng-click="setActive('/product')">Product</a>
+      <a href="#!/about" ng-class="{active: isActive('/about')}" ng-click="setActive('/about')">About</a>
+      <a href="#!/contact" ng-class="{active: isActive('/contact')}" ng-click="setActive('/contact')">Contact</a>
+    </div>
+  </section>
+
+  <!-- Overlay -->
+  <section id="overlay" class="overlay" ng-class="{show: isSidebarOpen}" ng-click="toggleSidebar()"></section>
+
+  <!-- Main Content -->
+  <section ng-view class="container">
+  </section>
+
+  <div style="padding: 50px;"></div>
+
+  <footer class="footer">
+    <a title="temp" class="fa fa-facebook"></a>
+    <a title="temp" class="fa fa-instagram"></a>
+    <a title="temp" class="fa fa-whatsapp"></a>
+    <p> © 2024 CafeHub. All rights reserved. </p>
+  </footer>
+
+  <!-- AngularJS and App Script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

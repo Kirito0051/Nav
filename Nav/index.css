@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100;400&display=swap');
+
+body {
+  font-family: 'Playwrite NG Modern', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5d8;
+  position: relative;
+}
+
+.navbar {
+  background-color: #7b85c6;
+  padding: 4px 100px;
+  position: fixed;
+  width: 100%;
+  min-height: 80px;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 20px 0px;
+}
+
+.navbar a {
+  color: #3b3b3b;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.navbar a:hover {
+  transform: scale(1.1);
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #3b3b3b;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar a:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar .nav-button {
+  font-size: 24px;
+  cursor: pointer;
+  color: #3b3b3b;
+  margin-left: 10px;
+  transition: all 0.5s linear;
+}
+
+.navbar .nav-button:hover {
+  background-image: url('./assets/Froth.jpg');
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: scale(1.1);
+}
+
+.hamburger {
+  display: none;  
+  flex-direction: row;
+  cursor: pointer;
+  margin-left: auto; 
+  gap: 5px;
+}
+
+
+.hamburger span {
+  background-color: #fff;
+  height: 8px; 
+  width: 8px;  
+  margin: 6px 0;  
+  border-radius: 50%; 
+  transition: all 0.3s ease-in-out;
+  background-color: #3b3b3b;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-content {
+    display: none; 
+  }
+
+  .hamburger {
+    display: flex; 
+  }
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #333;
+  color: #fff;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #ffd700;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 2;
+}
+
+.overlay.show {
+  display: block;
+}
+
+.container {
+  min-height: 92vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.content {
+  width: 50%;
+  padding: 20px 100px;
+  background-color: #f5f5f0;
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  width: 100%;
+  padding: 10px;
+  /* position: relative; */
+  color: #e5e5d8;
+  text-align: center;
+}
+
+.footer .fa {
+  padding: 8px;
+  font-size: 16px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fa-facebook {
+  color: #3b3b3b;
+}
+
+.fa-instagram {
+  color: #3b3b3b;
+}
+
+.fa-whatsapp {
+  color: #3b3b3b;
+}
+
+.footer > p {
+  font-family: 'Georgia', serif;
+  font-size: 12px;
+  font-weight: 40;
+  color: #555;
+  margin-top: 1px;
+  line-height: 1;
+}
+
